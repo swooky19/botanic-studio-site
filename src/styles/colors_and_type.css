@@ -1,0 +1,254 @@
+/* ============================================
+   botanic studio — Design Tokens
+   "Where music takes root."
+
+   Dark, warm botanical premium.
+   Terre & Feuilles — organic warmth in a rigorous grid.
+   ============================================ */
+
+/* ─── Webfonts ─────────────────────────────── */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap");
+
+:root {
+  /* ─── Base palette ──────────────────────────
+     Warm blacks. Living greens. Earth + sand.
+     Never cold. Never neon. Never grey-blue. */
+
+  /* Backgrounds — warm blacks, not cold */
+  --bs-studio:    #100e0c;  /* deepest soil / midnight workshop — bumped from #0a0908 for ambient lift */
+  --bs-surface:   #18150f;  /* primary canvas */
+  --bs-elevated:  #1f1b16;  /* cards, panels */
+  --bs-glass:     #1e1b17;  /* sheets, modals, inputs */
+
+  /* Botanical accents — vines, leaves, moss */
+  --bs-vine:      #4a7c59;  /* primary accent — mid-green */
+  --bs-leaf:      #7fb069;  /* bright accent — fresh growth */
+  --bs-moss:      #2d4a2e;  /* deep, shaded green */
+  --bs-bloom:     #c8e6c9;  /* pale pastel green — flower */
+
+  /* Warm earth tones — bark, soil, sand */
+  --bs-bark:      #8b6f47;  /* warm brown */
+  --bs-earth:     #5c4a3a;  /* deeper brown */
+  --bs-sand:      #d4c5a9;  /* soft warm tan */
+  --bs-cream:     #f2ede4;  /* paper / cream backdrop */
+  --bs-milk:      #faf8f3;  /* lightest off-white */
+
+  /* Type colors */
+  --bs-light:     #faf8f3;  /* primary text on dark — milk, whiter */
+  --bs-muted:     #b5a99a;  /* secondary text on dark — WCAG AA on bs-studio */
+  --bs-ink:       #0a0908;  /* primary text on light */
+  --bs-ink-soft:  #3a3530;  /* secondary text on light */
+
+  /* Functional */
+  --bs-harvest:   #c49a5c;  /* warm gold — pricing, accents */
+  --bs-glow:      rgba(74, 124, 89, 0.12);
+
+  /* Semantic surfaces (dark-mode default) */
+  --bs-bg:           var(--bs-studio);
+  --bs-bg-surface:   var(--bs-surface);
+  --bs-bg-elevated:  var(--bs-elevated);
+  --bs-bg-glass:     var(--bs-glass);
+  --bs-fg:           var(--bs-light);
+  --bs-fg-muted:     var(--bs-muted);
+  --bs-accent:       var(--bs-vine);
+  --bs-accent-soft:  var(--bs-leaf);
+  --bs-hairline:     rgba(154, 142, 127, 0.12);   /* warm divider */
+  --bs-hairline-strong: rgba(154, 142, 127, 0.22);
+
+  /* Light-canvas (paper) variant */
+  --bs-paper:        var(--bs-cream);
+  --bs-paper-ink:    var(--bs-ink);
+  --bs-paper-hairline: rgba(92, 74, 58, 0.18);
+
+  /* ─── Typography ────────────────────────────
+     Playfair Display — editorial headlines, italics for warmth.
+     DM Sans — UI + body; calm, generous.
+     IBM Plex Mono — small labels, technical credits, gear lists. */
+
+  /* Swiss-style direction: a disciplined neo-grotesque for display + body,
+     a technical mono for labels & credits. No serif. Inter Tight is our
+     closest open substitute for Söhne / Neue Haas Grotesk on Google Fonts. */
+  --font-display: "Inter Tight", "Neue Haas Grotesk Text Pro", "Helvetica Neue", system-ui, sans-serif;
+  --font-sans:    "Inter", "Helvetica Neue", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+
+  /* Type scale — fluid, generous, editorial */
+  --bs-text-xs:   0.75rem;    /* 12 — micro labels, mono */
+  --bs-text-sm:   0.875rem;   /* 14 — captions, meta */
+  --bs-text-base: 1rem;       /* 16 — body */
+  --bs-text-md:   1.125rem;   /* 18 — large body, lede */
+  --bs-text-lg:   1.375rem;   /* 22 — h4 */
+  --bs-text-xl:   1.875rem;   /* 30 — h3 */
+  --bs-text-2xl:  clamp(2rem, 3.5vw, 2.75rem);     /* h2 */
+  --bs-text-3xl:  clamp(2.75rem, 6vw, 4.5rem);     /* h1 */
+  --bs-text-hero: clamp(3.5rem, 10vw, 9rem);       /* display hero */
+
+  /* Line-heights */
+  --bs-lh-tight:   1.05;   /* hero, display */
+  --bs-lh-snug:    1.15;   /* headings */
+  --bs-lh-normal:  1.5;    /* body */
+  --bs-lh-relaxed: 1.7;    /* long-form */
+
+  /* Letter-spacing — tight on display, open on micro caps */
+  --bs-tracking-tight:  -0.02em;
+  --bs-tracking-normal: 0;
+  --bs-tracking-wide:   0.04em;
+  --bs-tracking-caps:   0.18em;    /* MICRO CAPS — eyebrow labels */
+
+  /* ─── Spacing ───────────────────────────────
+     Generous, breathing. Always feels like air. */
+  --bs-space-1:  0.25rem;   /*  4 */
+  --bs-space-2:  0.5rem;    /*  8 */
+  --bs-space-3:  0.75rem;   /* 12 */
+  --bs-space-4:  1rem;      /* 16 */
+  --bs-space-5:  1.5rem;    /* 24 */
+  --bs-space-6:  2rem;      /* 32 */
+  --bs-space-7:  3rem;      /* 48 */
+  --bs-space-8:  4rem;      /* 64 */
+  --bs-space-9:  6rem;      /* 96 */
+  --bs-space-10: 8rem;      /* 128 */
+
+  /* Semantic rhythm */
+  --bs-gutter:   clamp(1.5rem, 4vw, 3rem);
+  --bs-element:  clamp(1.5rem, 2.5vw, 2.5rem);
+  --bs-block:    clamp(3rem, 5vw, 5rem);
+  --bs-section:  clamp(6rem, 10vw, 10rem);
+
+  /* Radii — soft, not pillowy. Pebble, not bubble. */
+  --bs-radius-xs: 2px;
+  --bs-radius-sm: 4px;
+  --bs-radius-md: 8px;
+  --bs-radius-lg: 14px;
+  --bs-radius-xl: 22px;
+  --bs-radius-pill: 999px;
+
+  /* Borders */
+  --bs-border-hairline: 1px solid var(--bs-hairline);
+  --bs-border-strong:   1px solid var(--bs-hairline-strong);
+  --bs-border-vine:     1px solid rgba(74, 124, 89, 0.4);
+
+  /* Shadow & glow — warm, low, never blue-grey */
+  --bs-shadow-soft:    0 1px 0 rgba(255,255,255,0.02) inset, 0 12px 32px -16px rgba(0,0,0,0.5);
+  --bs-shadow-deep:    0 30px 60px -30px rgba(0,0,0,0.7), 0 18px 36px -24px rgba(0,0,0,0.4);
+  --bs-shadow-paper:   0 1px 2px rgba(58, 45, 32, 0.04), 0 12px 28px -18px rgba(58, 45, 32, 0.18);
+  --bs-glow-vine:      0 0 30px oklch(from #4a7c59 l c h / 0.18);
+  --bs-glow-harvest:   0 0 24px oklch(from #c49a5c l c h / 0.12);
+
+  /* Motion — slow, contemplative, organic */
+  --bs-duration-micro:     200ms;
+  --bs-duration-reveal:    600ms;
+  --bs-duration-signature: 1200ms;
+  --bs-ease-reveal:  cubic-bezier(0.16, 1, 0.3, 1);
+  --bs-ease-organic: cubic-bezier(0.33, 1, 0.68, 1);
+  --bs-ease-breathe: cubic-bezier(0.37, 0, 0.63, 1);
+
+  /* Z-index */
+  --bs-z-base: 0;
+  --bs-z-elevated: 10;
+  --bs-z-sticky: 50;
+  --bs-z-overlay: 100;
+  --bs-z-modal: 200;
+}
+
+/* ─── Semantic type roles ─────────────────── */
+.bs-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--bs-text-hero);
+  line-height: var(--bs-lh-tight);
+  letter-spacing: var(--bs-tracking-tight);
+  text-wrap: balance;
+}
+.bs-display em { font-style: italic; color: var(--bs-accent-soft); }
+
+.bs-h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--bs-text-3xl);
+  line-height: var(--bs-lh-tight);
+  letter-spacing: var(--bs-tracking-tight);
+  text-wrap: balance;
+}
+.bs-h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--bs-text-2xl);
+  line-height: var(--bs-lh-snug);
+  letter-spacing: var(--bs-tracking-tight);
+  text-wrap: balance;
+}
+.bs-h3 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--bs-text-xl);
+  line-height: var(--bs-lh-snug);
+  letter-spacing: -0.01em;
+}
+.bs-h4 {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--bs-text-lg);
+  line-height: var(--bs-lh-snug);
+}
+
+.bs-lede {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: var(--bs-text-md);
+  line-height: var(--bs-lh-relaxed);
+  color: var(--bs-fg-muted);
+  text-wrap: pretty;
+  max-width: 56ch;
+}
+.bs-body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--bs-text-base);
+  line-height: var(--bs-lh-relaxed);
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+.bs-meta {
+  font-family: var(--font-sans);
+  font-size: var(--bs-text-sm);
+  color: var(--bs-fg-muted);
+  line-height: var(--bs-lh-normal);
+}
+.bs-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--bs-text-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--bs-tracking-caps);
+  color: var(--bs-accent);
+  font-weight: 400;
+}
+.bs-eyebrow::before {
+  content: "·· ";
+  opacity: 0.6;
+}
+.bs-mono {
+  font-family: var(--font-mono);
+  font-size: var(--bs-text-sm);
+  letter-spacing: 0;
+}
+.bs-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--bs-text-xl);
+  line-height: var(--bs-lh-snug);
+  color: var(--bs-fg);
+  text-wrap: balance;
+}
+
+/* ─── Selection ─────────────────────────────── */
+::selection {
+  background-color: rgba(74, 124, 89, 0.35);
+  color: var(--bs-light);
+}
+
+/* ─── Focus ─────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--bs-leaf);
+  outline-offset: 2px;
+}

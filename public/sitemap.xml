@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Home -->
+  <url>
+    <loc>https://botanicstudio.ch/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/"/>
+  </url>
+  <url>
+    <loc>https://botanicstudio.ch/en/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/"/>
+  </url>
+
+  <!-- Atelier / The Studio -->
+  <url>
+    <loc>https://botanicstudio.ch/atelier.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/atelier.html"/>
+  </url>
+  <url>
+    <loc>https://botanicstudio.ch/en/atelier.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/atelier.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/atelier.html"/>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://botanicstudio.ch/faq.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/faq.html"/>
+  </url>
+  <url>
+    <loc>https://botanicstudio.ch/en/faq.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/faq.html"/>
+  </url>
+
+  <!-- Mentions légales / Legal notice -->
+  <url>
+    <loc>https://botanicstudio.ch/mentions-legales.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/mentions-legales.html"/>
+  </url>
+  <url>
+    <loc>https://botanicstudio.ch/en/mentions-legales.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/mentions-legales.html"/>
+  </url>
+
+</urlset>

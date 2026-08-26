@@ -1,0 +1,244 @@
+/* ================================================================
+   botanic studio — site.css  v2 (Inter Tight system)
+   All weights updated for grotesque: Playfair 400 ≠ Inter Tight 400
+   ================================================================ */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bs-studio); color: var(--bs-light); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+/* ── Layout ─────────────────────────────────── */
+.container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 var(--bs-gutter); }
+
+/* ── Eyebrow label ──────────────────────────── */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bs-vine);
+}
+.eyebrow::before { content: "·· "; opacity: 0.65; }
+
+/* ── Scroll progress bar ────────────────────── */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; width: 100%; height: 2px; z-index: 9999;
+  background: linear-gradient(90deg, var(--bs-vine), var(--bs-leaf));
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 80ms linear;
+  pointer-events: none;
+}
+
+/* ── Grain overlay ──────────────────────────── */
+.grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9998;
+  opacity: 0.032; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Buttons ────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 26px; border-radius: 999px;
+  font-family: var(--font-sans); font-weight: 600; font-size: 13.5px; line-height: 1;
+  letter-spacing: -0.01em;
+  border: 1px solid transparent; cursor: pointer;
+  transition: all .28s var(--bs-ease-organic); white-space: nowrap;
+}
+.btn-primary { background: var(--bs-vine); color: var(--bs-light); }
+.btn-primary:hover { background: var(--bs-leaf); color: var(--bs-studio); box-shadow: 0 0 32px rgba(74,124,89,.3); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--bs-light); border-color: rgba(154,142,127,.28); }
+.btn-ghost:hover { border-color: var(--bs-leaf); color: var(--bs-leaf); }
+.btn .arrow { transition: transform .3s var(--bs-ease-organic); display: inline-block; }
+.btn:hover .arrow { transform: translateX(5px); }
+
+/* ── Sections ───────────────────────────────── */
+section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
+
+.section-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 72px; gap: 40px; flex-wrap: wrap;
+}
+/* Inter Tight at 700 — punchy, editorial, on-brand */
+.section-head h2 {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(38px, 5vw, 68px); line-height: 1.0;
+  letter-spacing: -0.03em; margin: 14px 0 0; max-width: 14ch;
+  text-wrap: balance;
+}
+/* italic accent stays Inter Tight 500 italic, leaf color */
+.section-head h2 em { font-style: italic; font-weight: 500; color: var(--bs-leaf); }
+.section-head .sub {
+  font-family: var(--font-sans); font-size: 15px; font-weight: 300;
+  color: var(--bs-muted); line-height: 1.6; max-width: 38ch; text-wrap: pretty;
+}
+
+/* ── Scroll-reveal ──────────────────────────── */
+.reveal-on-scroll {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 700ms var(--bs-ease-reveal), transform 700ms var(--bs-ease-reveal);
+}
+.reveal-on-scroll.visible { opacity: 1; transform: none; }
+.reveal-on-scroll.d1 { transition-delay: 80ms; }
+.reveal-on-scroll.d2 { transition-delay: 180ms; }
+.reveal-on-scroll.d3 { transition-delay: 280ms; }
+.reveal-on-scroll.d4 { transition-delay: 380ms; }
+
+/* Legacy reveal (page-load) */
+@keyframes bs-rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+.reveal  { animation: bs-rise 900ms var(--bs-ease-reveal) both; }
+.reveal-d1 { animation-delay: 100ms; }
+.reveal-d2 { animation-delay: 220ms; }
+.reveal-d3 { animation-delay: 340ms; }
+
+/* ── Hairline ───────────────────────────────── */
+.hairline { height: 1px; background: var(--bs-hairline); width: 100%; }
+
+/* ── Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(154,142,127,0.14); border-radius: 999px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* ── Burger trigger (mobile only) — three lines into ☰ ─────────── */
+.bs-nav-burger {
+  display: none;
+  width: 38px; height: 38px;
+  background: transparent; border: none; padding: 0;
+  cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+.bs-nav-burger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--bs-light); border-radius: 1px;
+  transition: background .2s var(--bs-ease-organic);
+}
+.bs-nav-burger:hover span { background: var(--bs-leaf); }
+
+/* ── Mobile: swap nav for the burger; hide the cramped link bar ── */
+@media (max-width: 768px) {
+  .bs-nav-links,
+  .bs-nav-desktop-right { display: none !important; }
+  .bs-nav-burger { display: flex; }
+}
+
+/* ── Full-screen mobile menu overlay — vine-on-cream, editorial ── */
+.bs-mobile-menu {
+  position: fixed; inset: 0; z-index: 1000;
+  background: var(--bs-cream);
+  display: flex; flex-direction: column;
+  padding: clamp(2rem, 8vw, 4rem);
+  animation: bs-menu-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  overflow-y: auto;
+}
+@keyframes bs-menu-in {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.bs-mobile-menu-close {
+  position: absolute; top: clamp(1.4rem, 4vw, 2.2rem); right: clamp(1.4rem, 4vw, 2.2rem);
+  width: 44px; height: 44px;
+  background: transparent; border: 1px solid rgba(74, 124, 89, 0.2);
+  border-radius: 999px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; padding: 0;
+  transition: border-color .28s var(--bs-ease-organic), transform .28s var(--bs-ease-organic);
+}
+.bs-mobile-menu-close span {
+  position: absolute; width: 16px; height: 1.5px; background: var(--bs-vine); border-radius: 1px;
+}
+.bs-mobile-menu-close span:nth-child(1) { transform: rotate( 45deg); }
+.bs-mobile-menu-close span:nth-child(2) { transform: rotate(-45deg); }
+.bs-mobile-menu-close:hover { border-color: var(--bs-vine); transform: rotate(90deg); }
+
+.bs-mobile-menu-nav {
+  margin-top: clamp(4rem, 14vw, 7rem);
+  flex: 1;
+}
+.bs-mobile-menu-nav ul {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column;
+}
+.bs-mobile-menu-nav li {
+  border-bottom: 1px solid rgba(74, 124, 89, 0.12);
+}
+.bs-mobile-menu-nav li:last-child { border-bottom: none; }
+.bs-mobile-menu-nav a {
+  display: block;
+  padding: clamp(1rem, 3.2vw, 1.6rem) 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  color: var(--bs-vine);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color .28s var(--bs-ease-organic), padding-left .28s var(--bs-ease-organic);
+}
+.bs-mobile-menu-nav a:hover,
+.bs-mobile-menu-nav a:focus-visible {
+  color: var(--bs-leaf);
+  padding-left: 12px;
+  outline: none;
+}
+.bs-mobile-menu-nav a[aria-current="location"] { color: var(--bs-leaf); }
+
+.bs-mobile-menu-cta {
+  align-self: flex-start;
+  margin-top: clamp(2rem, 6vw, 3rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bs-mobile-menu { animation: none; }
+  .bs-mobile-menu-close, .bs-mobile-menu-nav a { transition: none; }
+}
+
+/* ── Paper grain on cream sections — additive material feel ──────
+   The site already has a global .grain layer at 3.2% opacity (overlay).
+   Cream sections (data-bg="light") absorb a bit more without dirtying.
+   Multiply blend on warm noise gives a subtle paper texture. */
+main > section[data-bg="light"]::before {
+  /* The existing feather gradient (top edge) already uses ::before.
+     Add the texture *behind* it by also styling ::after-paper via JS?
+     Cleaner: stack via a child div. To avoid touching JSX, use a CSS
+     overlay on the section's background-image. */
+}
+@supports (background-blend-mode: multiply) {
+  main > section[data-bg="light"] {
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 320'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0 0.24 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+    background-size: 320px 320px;
+  }
+}
+
+/* ── Dots-wave loader (form submit beat) — from loaders.html ld03 ─ */
+.bs-dots-wave { display: inline-flex; gap: 5px; align-items: center; margin-left: 6px; vertical-align: -1px; }
+.bs-dots-wave i {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--bs-light); display: inline-block;
+  animation: bs-dots-wave 1.4s ease-in-out infinite;
+}
+.bs-dots-wave i:nth-child(2) { animation-delay: 0.16s; }
+.bs-dots-wave i:nth-child(3) { animation-delay: 0.32s; }
+@keyframes bs-dots-wave {
+  0%, 80%, 100% { transform: translateY(0)   scale(0.7); opacity: 0.45; }
+  40%           { transform: translateY(-5px) scale(1.0); opacity: 1; }
+}
+
+/* ── Reduced motion: respect user preference ────────────────────
+   Disable scroll reveals, button hover transforms, and the legacy
+   page-load rise animation. The Testimonials carousel handles its
+   own reduced-motion locally. The Nervures shader is a continuous
+   ambient texture; leaving it on is intentional. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal,
+  .btn,
+  .btn .arrow {
+    transition: none !important;
+    animation: none !important;
+  }
+  .reveal-on-scroll { opacity: 1; transform: none; }
+}

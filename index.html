@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>botanic studio — La musique prend racine ici.</title>
+<meta name="description" content="Studio d'enregistrement, composition, production et mixage à Lausanne. Petites séries, grand soin. Deux cabines, une live room, du matériel analogique soigneusement choisi."/>
+<meta name="theme-color" content="#0a0908"/>
+<link rel="canonical" href="https://botanicstudio.ch/"/>
+<link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/"/>
+<link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/"/>
+<link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+
+<!-- Open Graph / social-media previews -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="fr_CH"/>
+<meta property="og:site_name" content="Botanic Studio"/>
+<meta property="og:url" content="https://botanicstudio.ch/"/>
+<meta property="og:title" content="botanic studio — La musique prend racine ici."/>
+<meta property="og:description" content="Studio d'enregistrement, composition, production et mixage à Lausanne. Petites séries, grand soin."/>
+<meta property="og:image" content="https://botanicstudio.ch/assets/photos/studio-control-room.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="botanic studio — La musique prend racine ici."/>
+<meta name="twitter:description" content="Studio d'enregistrement, composition, production et mixage à Lausanne."/>
+<meta name="twitter:image" content="https://botanicstudio.ch/assets/photos/studio-control-room.webp"/>
+<style>
+  /* ─── Discreet shader background ─── */
+  #site-bg {
+    position: fixed; inset: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+    mix-blend-mode: screen;
+    transition: opacity 1.6s cubic-bezier(.4,.0,.2,1);
+  }
+  body { background: var(--bs-studio); }
+  #root { position: relative; z-index: 1; }
+
+  /* ─── Soft melt between cream and dark sections ─── */
+  main > section[data-bg="light"] {
+    position: relative;
+  }
+  main > section[data-bg="light"]::before,
+  main > section[data-bg="light"]::after {
+    content: ''; position: absolute; left: 0; right: 0;
+    height: 120px; pointer-events: none; z-index: 0;
+  }
+  main > section[data-bg="light"]::before {
+    top: -120px;
+    background: linear-gradient(to bottom, transparent 0%, var(--bs-surface) 100%);
+  }
+  main > section[data-bg="light"]::after {
+    bottom: -120px;
+    background: linear-gradient(to top, transparent 0%, var(--bs-surface) 100%);
+  }
+  main > section[data-bg="light"] > * { position: relative; z-index: 1; }
+
+  /* ─── Tweak: drop cream surfaces (continuous dark canvas) ─── */
+  body.no-cream-surfaces #services,
+  body.no-cream-surfaces #arsenal,
+  body.no-cream-surfaces #testimonials,
+  body.no-cream-surfaces footer { background: transparent !important; }
+  body.no-cream-surfaces main > section[data-bg="light"]::before,
+  body.no-cream-surfaces main > section[data-bg="light"]::after { display: none; }
+
+  /* ─── Boot loader: concentric ripples (loaders.html ld06) ───
+     Lives inside #root so React's first render replaces it.
+     No JS cleanup needed. */
+  .bs-boot {
+    position: fixed; inset: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .bs-boot span {
+    position: absolute;
+    width: 60px; height: 60px;
+    border: 2px solid var(--bs-leaf);
+    border-radius: 50%;
+    opacity: 0;
+    animation: bs-boot-ripple 3.3s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  }
+  .bs-boot span:nth-child(2) { animation-delay: 1.1s; border-color: var(--bs-vine); }
+  .bs-boot span:nth-child(3) { animation-delay: 2.2s; border-color: rgba(154,142,127,0.45); }
+  @keyframes bs-boot-ripple {
+    0%   { transform: scale(0);   opacity: 0.9; }
+    100% { transform: scale(2.6); opacity: 0;   }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bs-boot span { animation: none; opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<canvas id="site-bg"></canvas>
+<div id="root"><div class="bs-boot" aria-hidden="true"><span></span><span></span><span></span></div></div>
+<div class="grain"></div>
+
+<script type="module" src="/src/main-fr.jsx"></script>
+<script src="https://links.satin-agency.com/js/form_embed.js"></script>
+</body>
+</html>

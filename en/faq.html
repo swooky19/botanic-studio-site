@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FAQ · botanic studio</title>
+<meta name="description" content="Ten frequent questions about sessions, pricing, cancellation, mixing and payment. Botanic Studio, Lausanne."/>
+<meta name="theme-color" content="#0a0908"/>
+<link rel="canonical" href="https://botanicstudio.ch/en/faq.html"/>
+<link rel="alternate" hreflang="fr" href="https://botanicstudio.ch/faq.html"/>
+<link rel="alternate" hreflang="en" href="https://botanicstudio.ch/en/faq.html"/>
+<link rel="alternate" hreflang="x-default" href="https://botanicstudio.ch/faq.html"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+
+<!-- Open Graph / social-media previews -->
+<meta property="og:type" content="website"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="fr_CH"/>
+<meta property="og:site_name" content="Botanic Studio"/>
+<meta property="og:url" content="https://botanicstudio.ch/en/faq.html"/>
+<meta property="og:title" content="FAQ — Botanic Studio Lausanne"/>
+<meta property="og:description" content="Booking, pricing, cancellation, mixing, delivery, payment — ten clear answers to questions that come up often."/>
+<meta property="og:image" content="https://botanicstudio.ch/assets/photos/studio-control-room.webp"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="FAQ — Botanic Studio Lausanne"/>
+<meta name="twitter:description" content="Booking, pricing, cancellation, mixing, delivery, payment."/>
+<meta name="twitter:image" content="https://botanicstudio.ch/assets/photos/studio-control-room.webp"/>
+
+<link rel="stylesheet" href="/src/styles/colors_and_type.css"/>
+<link rel="stylesheet" href="/src/styles/site.css"/>
+<style>
+  body { background: var(--bs-studio); color: var(--bs-light); padding: clamp(80px, 12vw, 140px) 0 80px; }
+  .faq-lang {
+    position: fixed; top: 20px; right: 24px; z-index: 50;
+    font-family: var(--font-mono); font-size: 10.5px;
+    letter-spacing: 0.16em;
+    display: flex; gap: 8px; align-items: center;
+    background: rgba(10,9,8,0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 8px 14px; border-radius: 999px;
+    border: 1px solid rgba(154,142,127,0.12);
+  }
+  .faq-lang a { color: var(--bs-muted); text-decoration: none; transition: color .2s; }
+  .faq-lang a:hover { color: var(--bs-leaf); }
+  .faq-lang .active { color: var(--bs-leaf); }
+  .faq-lang .sep { color: rgba(154,142,127,0.4); }
+
+  .faq-head { text-align: left; margin-bottom: clamp(48px, 8vw, 88px); }
+  .faq-head h1 {
+    font-family: var(--font-display); font-weight: 800;
+    font-size: clamp(44px, 7vw, 96px); line-height: 0.98;
+    letter-spacing: -0.035em; margin: 14px 0 24px; text-wrap: balance;
+    max-width: 14ch;
+  }
+  .faq-head h1 em { font-style: italic; font-weight: 600; color: var(--bs-leaf); }
+  .faq-head p {
+    font-family: var(--font-sans); font-size: 16px; font-weight: 300;
+    line-height: 1.7; color: var(--bs-muted); max-width: 52ch; margin: 0;
+    text-wrap: pretty;
+  }
+
+  .faq-list { display: flex; flex-direction: column; gap: 0; max-width: 780px; }
+  .faq-item {
+    border-top: 1px solid var(--bs-hairline);
+  }
+  .faq-item:last-of-type { border-bottom: 1px solid var(--bs-hairline); }
+
+  .faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 30px 0;
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 28px;
+  }
+  .faq-item > summary::-webkit-details-marker { display: none; }
+  .faq-item > summary:focus-visible {
+    outline: 2px solid var(--bs-leaf); outline-offset: 4px;
+    border-radius: 4px;
+  }
+  .faq-item > summary:hover .faq-q { color: var(--bs-leaf); }
+
+  .faq-q {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(20px, 2.4vw, 26px); line-height: 1.22;
+    letter-spacing: -0.025em; margin: 0;
+    color: var(--bs-light); text-wrap: balance;
+    transition: color .2s;
+    flex: 1;
+  }
+  .faq-q em { font-style: italic; font-weight: 500; color: var(--bs-leaf); }
+
+  .faq-icon {
+    font-family: var(--font-mono); font-size: 24px; line-height: 1;
+    color: var(--bs-leaf);
+    flex-shrink: 0; margin-top: 4px;
+    transition: transform .35s var(--bs-ease-organic);
+    user-select: none;
+  }
+  .faq-item[open] > summary .faq-icon { transform: rotate(45deg); }
+
+  .faq-a-wrap {
+    padding: 0 0 32px;
+    animation: faq-slide-in .35s var(--bs-ease-organic);
+  }
+  .faq-a {
+    font-family: var(--font-sans); font-size: 15px; font-weight: 300;
+    line-height: 1.7; color: var(--bs-muted); margin: 0;
+    max-width: 64ch; text-wrap: pretty;
+  }
+  .faq-a a { color: var(--bs-leaf); border-bottom: 1px solid rgba(127,176,105,0.3); }
+
+  @keyframes faq-slide-in {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .faq-icon, .faq-a-wrap { animation: none; transition: none; }
+  }
+
+  .faq-foot {
+    margin-top: clamp(64px, 10vw, 96px);
+    padding-top: 36px; border-top: 1px solid var(--bs-hairline);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .faq-foot p {
+    font-family: var(--font-sans); font-size: 14px; color: var(--bs-muted);
+    margin: 0; max-width: 42ch; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="faq-lang">
+  <a href="../faq.html">FR</a>
+  <span class="sep">·</span>
+  <span class="active">EN</span>
+</div>
+
+<div class="container">
+
+  <header class="faq-head">
+    <div class="eyebrow">Frequently asked</div>
+    <h1>We answer<br/>what <em>you ask</em>.</h1>
+    <p>Ten questions that come up often. Click to open an answer. If yours isn't here, write to us — we read everything.</p>
+  </header>
+
+  <section class="faq-list" aria-label="Frequently asked questions">
+
+    <details class="faq-item" open>
+      <summary>
+        <h2 class="faq-q">How do I book a session?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Easiest way: the <a href="index.html#contact">form</a> on the home page. We'll come back to you within 24–48h to lock the details. You can also write directly to <a href="mailto:info@botanicstudio.ch">info@botanicstudio.ch</a> or DM <a href="https://www.instagram.com/botanicstudiolausanne/">@botanicstudiolausanne</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">How much does a session <em>cost</em>?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Recording is CHF 60.- per hour. Composition, production and mixing are quoted — we adapt to the format (single, EP, album) and the complexity. Full details on the <a href="index.html#services">Services page</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">What is your <em>cancellation</em> policy?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">A session cancelled less than 24 hours before the start is charged in full. Beyond 24 hours, no charge. We understand life happens — a serious emergency can always be discussed, but the studio is held for you and the slot stays reserved.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">What should I <em>bring</em> on the day?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Your instruments, sonic references (Spotify playlist, files of tracks that inspire you), your lyrics or charts if you sing or play written music, and whatever you need to settle in. We have everything else — mics, preamps, recording chain. Cables, stands, headphones are on us.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">How long does a <em>mix</em> take?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Allow 1 to 3 days per track depending on density, plus a feedback session for adjustments. We deliver a v1 mix, listen together (or remotely via a link), you flag what feels off, we make a v2. A third revision is included if needed.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">Do we keep our <em>stems</em> and multitracks?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Yes, always. On delivery of the mix, you leave with the final master, the stems (instrument groups), and on request the full session multitracks. It's your work — you own it.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">Can we <em>visit</em> before booking?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Of course. A 30-minute visit, no commitment, to see the studio, hear a few tracks that came out of it, and talk through your project. Set up an appointment via the form — we'll match it to our availability.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">What <em>styles</em> do you work with?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">We record and produce every style — pop, rap, soul, chanson, indie, electronic, chamber classical. The analog grain and neutral monitoring work everywhere. If we've never touched your world, we'll say so upfront; but generally what changes is the colour of the mix, not the quality of the work.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">Can we record as a <em>group</em> or live?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">Yes. Two booths + a live room let us track a group simultaneously with clean separation between takes. For larger setups (sextet, ensembles), we discuss in advance — plan a bit more setup time.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>
+        <h2 class="faq-q">How does <em>payment</em> work?</h2>
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </summary>
+      <div class="faq-a-wrap">
+        <p class="faq-a">A 30% deposit is requested when the booking is confirmed, the balance on delivery of the master. Payment by bank transfer (Swiss IBAN) or Twint. An invoice is issued at each step. For longer projects (albums), we can split into milestones.</p>
+      </div>
+    </details>
+
+  </section>
+
+  <div class="faq-foot">
+    <p>Your question isn't here? Write to us — we always take the time to reply.</p>
+    <a class="btn btn-primary" href="index.html#contact">Write to us <span class="arrow">→</span></a>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Botanic Studio — robots.txt
+# Allow all well-behaved crawlers.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://botanicstudio.ch/sitemap.xml
