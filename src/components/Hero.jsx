@@ -119,7 +119,7 @@ function Hero() {
           </p>
 
           <div className="reveal reveal-d3" style={{display:'flex', gap:14, flexWrap:'wrap'}}>
-            <a className="btn btn-primary" href="#contact">Réserver une session</a>
+            <a className="btn btn-primary" href="#contact">Prends rendez-vous</a>
             <a className="btn btn-ghost" href="#services">Voir les services</a>
           </div>
         </div>

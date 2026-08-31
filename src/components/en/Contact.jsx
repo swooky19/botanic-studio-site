@@ -24,7 +24,7 @@ function Contact() {
         <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(min(100%, 360px), 1fr))', gap:64, alignItems:'start'}}>
 
           <div className="reveal-on-scroll">
-            <div className="eyebrow" style={{marginBottom:20}}>First contact · reply within 24–48h</div>
+            <div className="eyebrow" style={{marginBottom:20}}>Two ways to start</div>
             <h2 style={{
               fontFamily:'var(--font-display)', fontWeight:800,
               fontSize:'clamp(38px, 5vw, 74px)', lineHeight:0.98,
@@ -37,7 +37,7 @@ function Contact() {
               lineHeight:1.65, color:'var(--bs-muted)', maxWidth:'38ch',
               textWrap:'pretty', margin:'0 0 44px',
             }}>
-              An idea, a track, an EP, an album. A craft question. Book a slot directly on the right.
+              An idea, a track, an EP, an album. A craft question. Choose a recording session or, if you'd rather talk it through first, a 30-minute discovery call.
             </p>
             <div style={{display:'flex', flexDirection:'column', gap:14}}>
               {[

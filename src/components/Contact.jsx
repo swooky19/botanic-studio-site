@@ -25,20 +25,20 @@ function Contact() {
 
           {/* Left — copy */}
           <div className="reveal-on-scroll">
-            <div className="eyebrow" style={{marginBottom:20}}>Premier contact · réponse sous 24–48h</div>
+            <div className="eyebrow" style={{marginBottom:20}}>Deux façons de commencer</div>
             <h2 style={{
               fontFamily:'var(--font-display)', fontWeight:800,
               fontSize:'clamp(38px, 5vw, 74px)', lineHeight:0.98,
               letterSpacing:'-0.035em', margin:'0 0 28px', textWrap:'balance',
             }}>
-              Parlons de<br/>votre <em style={{fontStyle:'italic', fontWeight:600, color:'var(--bs-leaf)'}}>projet</em>.
+              Parlons de<br/>ton <em style={{fontStyle:'italic', fontWeight:600, color:'var(--bs-leaf)'}}>projet</em>.
             </h2>
             <p style={{
               fontFamily:'var(--font-sans)', fontWeight:300, fontSize:17,
               lineHeight:1.65, color:'var(--bs-muted)', maxWidth:'38ch',
               textWrap:'pretty', margin:'0 0 44px',
             }}>
-              Une idée, un morceau, un EP, un album. Une question métier. Réservez un créneau directement ci-contre.
+              Une idée, un morceau, un EP, un album. Une question métier. Choisis une session d’enregistrement ou, si tu préfères en parler d’abord, un appel découverte de 30 minutes.
             </p>
             {/* Contact details */}
             <div style={{display:'flex', flexDirection:'column', gap:14}}>

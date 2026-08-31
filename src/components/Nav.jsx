@@ -1,6 +1,6 @@
 import React from 'react';
 // Nav.jsx — polished v2: Inter Tight wordmark, dynamic active, fixed anchors
-// + support des pages hors accueil (ex: atelier.html) + boutons "Réserver" / "Appelez-nous"
+// + support des pages hors accueil (ex: atelier.html) + boutons "Prends rendez-vous" / "Appelle-nous"
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [active, setActive]   = React.useState('');
@@ -107,9 +107,9 @@ function Nav() {
             </div>
 
             <div style={{display:'flex', alignItems:'center', gap:10}}>
-              <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={onHome ? "#contact" : "index.html#contact"}>Réserver</a>
+              <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={onHome ? "#contact" : "index.html#contact"}>Prends rendez-vous</a>
               <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>ou</span>
-              <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Appelez-nous</a>
+              <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Appelle-nous</a>
             </div>
           </div>
 
@@ -168,11 +168,11 @@ function MobileMenu({links, onClose, active, linkHref, phone, phoneDisplay}) {
       </div>
       <div style={{display:'flex', flexDirection:'column', gap:12, alignItems:'center'}}>
         <a className="btn btn-primary bs-mobile-menu-cta" href={linkHref({id:'contact'})} onClick={onClose}>
-          Réserver une session
+          Prends rendez-vous
         </a>
         <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>ou</span>
         <a className="btn btn-primary bs-mobile-menu-cta" href={`tel:${phone}`}>
-          Appelez-nous
+          Appelle-nous
         </a>
       </div>
     </div>
