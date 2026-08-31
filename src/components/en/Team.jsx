@@ -5,7 +5,7 @@ function Team() {
     {
       photo: "team-yoann.webp",
       name: "Yoann Maeder",
-      bio: "Guitarist, producer and sound engineer. Fifteen years in the job, by way of Montreux Jazz and Paléo.",
+      bio: "Guitarist, composer, producer and mixer. Fifteen years in the job, by way of Montreux Jazz and Paléo.",
       skills: ["REC","PROD","COMP","MIX"],
     },
   ];
