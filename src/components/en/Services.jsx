@@ -4,7 +4,7 @@ function Services() {
   const services = [
     {n:"01", title:"Recording", body:"Book one to four hours, with a sound engineer there from start to finish. Billed by the hour started.", price:"CHF 70.- /hr", detail:"Voice · Instruments"},
     {n:"02", title:"Mixing", body:"Two revisions included and stems delivered. We send a v1, you listen, we adjust through to v3.", price:"From CHF 350.- / track", detail:"Mix · Stems"},
-    {n:"03", title:"Mastering", body:"The last step before release. We get the track ready to go out.", price:"CHF 60.-", detail:"Finalization · Release"},
+    {n:"03", title:"Mastering", body:"We don't master in-house. We hand the master to partner engineers and follow the result with you.", price:"On quote", detail:"Partners · Release"},
     {n:"04", title:"Track production", body:"From the idea to the finished track. We scope the project together, then quote.", price:"On quote", detail:"Beatmaking · Sound design"},
   ];
 

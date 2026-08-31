@@ -2,10 +2,12 @@ import React from 'react';
 // Equipment.jsx (EN)
 function Equipment() {
   const cats = [
-    {name:"Preamps", note:"the chain", count:3, items:[
-      {n:"AMEK System 9098",      t:"Rupert Neve"},
-      {n:"Elysia Skulpter 500",   t:""},
-      {n:"UA Apollo X8",          t:""},
+    {name:"Preamps", note:"the chain", count:5, items:[
+      {n:"AMEK System 9098",           t:"Rupert Neve"},
+      {n:"Fredenstein Artistic Mic Pre", t:"×2 · 500 series"},
+      {n:"Premier Amp 573",            t:"500 series"},
+      {n:"Elysia Skulpter 500",        t:""},
+      {n:"UA Apollo X8",               t:""},
     ]},
     {name:"Monitoring", note:"the ear", count:4, items:[
       {n:"ATC SCM25A Pro Mk2",    t:"×2"},
@@ -22,10 +24,12 @@ function Equipment() {
       {n:"Audix D6",              t:""},
       {n:"Audio-Technica ATM450", t:"×2"},
     ]},
-    {name:"Instruments", note:"the living", count:4, items:[
+    {name:"Instruments", note:"the living", count:6, items:[
       {n:"Seiler Upright Piano",  t:""},
-      {n:"Fender Telecaster",     t:"Johnny A. Signature"},
+      {n:"Fender Telecaster",     t:""},
       {n:"Fender Stratocaster",   t:""},
+      {n:"Fender Mustang Bass",   t:""},
+      {n:"Roland Juno-106",       t:""},
       {n:"NI Komplete Kontrol S49", t:""},
     ]},
   ];

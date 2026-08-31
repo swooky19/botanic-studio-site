@@ -4,7 +4,7 @@ function Services() {
   const services = [
     {n:'01', title:'Enregistrement', body:'Tu réserves d’une à quatre heures, un ingénieur du son est là du début à la fin. Facturé à l’heure entamée.', price:'CHF 70.- /h', detail:'Voix · Instruments'},
     {n:'02', title:'Mixage', body:'Deux retouches comprises et les stems livrés. On envoie une v1, tu écoutes, on ajuste jusqu’à la v3.', price:'À partir de CHF 350.- / titre', detail:'Mix · Stems'},
-    {n:'03', title:'Mastering', body:'La dernière étape avant la sortie. On prépare le titre pour la diffusion.', price:'CHF 60.-', detail:'Finalisation · Diffusion'},
+    {n:'03', title:'Mastering', body:'On ne masterise pas au studio. On confie le master à des ingénieurs partenaires et on suit le rendu avec toi.', price:'Sur devis', detail:'Partenaires · Diffusion'},
     {n:'04', title:'Production d’un titre', body:'De l’idée au morceau fini. On cadre le projet ensemble, puis on chiffre.', price:'Sur devis', detail:'Beatmaking · Sound design'},
   ];
 
