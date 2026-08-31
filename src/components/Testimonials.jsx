@@ -106,10 +106,6 @@ function Testimonials() {
           from { opacity: 1; transform: translateX(0)     scale(1);     filter: blur(0); }
           to   { opacity: 0; transform: translateX(-22px) scale(0.985); filter: blur(2px); }
         }
-        @keyframes bs-review-progress {
-          from { transform: scaleX(0); }
-          to   { transform: scaleX(1); }
-        }
         .bs-review-in  { animation: bs-review-in  700ms var(--bs-ease-organic) both; }
         .bs-review-out { animation: bs-review-out 380ms var(--bs-ease-organic) both; }
 

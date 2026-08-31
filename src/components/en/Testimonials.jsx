@@ -85,36 +85,6 @@ function Testimonials() {
           </div>
 
         </div>
-
-        <div style={{display:"flex", gap:10, justifyContent:"center", marginTop:48, alignItems:"center"}}>
-          {reviews.map((_, j) => {
-            const active = idx === j;
-            return (
-              <button key={j} onClick={() => goTo(j)}
-                aria-label={`Review ${j+1}`}
-                style={{
-                  position:"relative", overflow:"hidden",
-                  width: active ? 36 : 7, height:7,
-                  borderRadius:999, border:0, padding:0,
-                  background: active ? "rgba(127,176,105,0.22)" : "rgba(154,142,127,0.22)",
-                  transition:"width .5s var(--bs-ease-organic), background .35s var(--bs-ease-organic)",
-                  cursor:"pointer",
-                }}>
-                {active && (
-                  <span
-                    key={`${idx}-${paused ? "p" : "r"}`}
-                    style={{
-                      position:"absolute", inset:0,
-                      background:"var(--bs-leaf)",
-                      transformOrigin:"left center",
-                      animation: `bs-review-progress ${readDuration}ms linear forwards`,
-                      animationPlayState: paused ? "paused" : "running",
-                    }}/>
-                )}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
       <style>{`
@@ -125,10 +95,6 @@ function Testimonials() {
         @keyframes bs-review-out {
           from { opacity: 1; transform: translateX(0)     scale(1);     filter: blur(0); }
           to   { opacity: 0; transform: translateX(-22px) scale(0.985); filter: blur(2px); }
-        }
-        @keyframes bs-review-progress {
-          from { transform: scaleX(0); }
-          to   { transform: scaleX(1); }
         }
         .bs-review-in  { animation: bs-review-in  700ms var(--bs-ease-organic) both; }
         .bs-review-out { animation: bs-review-out 380ms var(--bs-ease-organic) both; }
