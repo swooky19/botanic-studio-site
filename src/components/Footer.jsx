@@ -93,7 +93,7 @@ function MapBlock() {
       style: iframeStyle,
       loading: "lazy",
     }),
-    React.createElement('div', { style: badgeStyle }, "Ouvrir dans Maps →")
+    React.createElement('div', { style: badgeStyle }, "Ouvrir dans Maps")
   );
 }
 
