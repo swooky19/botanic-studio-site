@@ -1,12 +1,11 @@
 import React from 'react';
-// Team.jsx — v5: un jardinier (Yoann)
+// Team.jsx — v6: une seule fiche (Yoann)
 function Team() {
   const members = [
     {
       photo: 'team-yoann.webp',
       name: 'Yoann Maeder',
-      role: 'Le cultivateur',
-      bio: 'Guitariste, producteur et ingénieur du son. Il aborde chaque projet avec la patience d’un artisan et la vision d’un architecte. Montreux Jazz, Paléo, et 15 ans à cultiver des sons.',
+      bio: 'Guitariste, producteur et ingénieur du son. Quinze ans de métier, passé par Montreux Jazz et Paléo.',
       skills: ['REC','PROD','COMP','MIX'],
     },
   ];
@@ -16,7 +15,6 @@ function Team() {
       <div className="container">
         <div className="section-head reveal-on-scroll">
           <div>
-            <div className="eyebrow">L’équipe · 01 jardinier</div>
             <h2>Une paire de mains,<br/><em>attentive</em>.</h2>
           </div>
         </div>
@@ -37,7 +35,7 @@ function Team() {
 
                 <div
                   role={m.photo ? 'img' : undefined}
-                  aria-label={m.photo ? `Portrait de ${m.name}, ${m.role.toLowerCase()}` : undefined}
+                  aria-label={m.photo ? `Portrait de ${m.name}` : undefined}
                   style={{
                     width:160, height:220, borderRadius:8, overflow:'hidden',
                     position:'relative', flexShrink:0,
@@ -57,7 +55,6 @@ function Team() {
 
                 <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', padding:'4px 0'}}>
                   <div>
-                    <div className="eyebrow" style={{marginBottom:10}}>{m.role}</div>
                     <h3 style={{fontFamily:'var(--font-display)', fontWeight:800, fontSize:38, letterSpacing:'-0.03em', margin:'0 0 12px', lineHeight:0.96}}>{m.name}</h3>
                     <p style={{fontFamily:'var(--font-sans)', fontSize:13, lineHeight:1.65, color:'var(--bs-muted)', margin:0, textWrap:'pretty'}}>{m.bio}</p>
                   </div>

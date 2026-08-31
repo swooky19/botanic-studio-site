@@ -34,11 +34,6 @@ function Credits() {
           }}>
             Yoann Maeder
           </span>
-          <span style={{
-            display:"block", fontFamily:"var(--font-mono)", fontWeight:400,
-            fontSize:9, letterSpacing:"0.2em", textTransform:"uppercase",
-            color:"var(--bs-vine)", marginTop:3,
-          }}>·· The grower</span>
         </div>
 
         <div style={{borderBottom:"1px solid var(--bs-hairline)"}}>
@@ -50,7 +45,7 @@ function Credits() {
                 className="reveal-on-scroll"
                 style={{
                   transitionDelay:`${i * 60}ms`,
-                  display:"grid", gridTemplateColumns:"1.2fr 1fr 1fr 40px",
+                  display:"grid", gridTemplateColumns:"1.2fr 1fr 1fr",
                   gap:28, alignItems:"center",
                   padding:"22px 0", borderTop:"1px solid var(--bs-hairline)",
                   transition:"background .2s, padding-left .2s var(--bs-ease-organic)",
@@ -68,7 +63,6 @@ function Credits() {
                 <span style={{fontFamily:"var(--font-mono)", fontSize:10, letterSpacing:"0.1em", color:"var(--bs-vine)", textTransform:"uppercase"}}>
                   {c.role}
                 </span>
-                <span style={{fontFamily:"var(--font-mono)", fontSize:14, color: c.youtube ? "var(--bs-leaf)" : "rgba(154,142,127,0.35)", justifySelf:"end"}}>→</span>
               </Wrapper>
             );
           })}

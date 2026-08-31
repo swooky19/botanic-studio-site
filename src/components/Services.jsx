@@ -2,13 +2,13 @@ import React from 'react';
 // Services.jsx — v2: Inter Tight weights corrected, grille 3x2 avec mentions tarifaires en case 5
 function Services() {
   const services = [
-    {n:'01', stage:'la graine',    title:'Enregistrement', body:'Location du studio avec ingénieur du son. Chaîne analogique Neve, acoustique traitée, deux cabines.', price:'CHF 70.- /h',     detail:'Voix · Instruments · Ensembles'},
-    {n:'02', stage:'la pousse',    title:'Mixage',         body:'2 retouches comprises, export des stems inclus. Clarté, profondeur, équilibre pour chaque élément.',    price:'CHF 350.- (+50.- / retouche supp.)', detail:'Mix · Stems · Équilibre'},
-    {n:'03', stage:'la floraison', title:'Mastering',      body:'Finalisation et préparation à la diffusion. La dernière étape avant que le titre soit prêt.',            price:'CHF 60.-',         detail:'Finalisation · Diffusion'},
-    {n:'04', stage:'la récolte',   title:'Production d’un titre', body:'Tarif adapté au projet. De l’idée brute au morceau fini, sur-mesure selon les besoins.',       price:'Sur devis',        detail:'Beatmaking · Sound design'},
+    {n:'01', title:'Enregistrement', body:'Tu réserves d’une à quatre heures, un ingénieur du son est là du début à la fin. Facturé à l’heure entamée.', price:'CHF 70.- /h', detail:'Voix · Instruments'},
+    {n:'02', title:'Mixage', body:'Deux retouches comprises et les stems livrés. On envoie une v1, tu écoutes, on ajuste jusqu’à la v3.', price:'À partir de CHF 350.- / titre', detail:'Mix · Stems'},
+    {n:'03', title:'Mastering', body:'La dernière étape avant la sortie. On prépare le titre pour la diffusion.', price:'CHF 60.-', detail:'Finalisation · Diffusion'},
+    {n:'04', title:'Production d’un titre', body:'De l’idée au morceau fini. On cadre le projet ensemble, puis on chiffre.', price:'Sur devis', detail:'Beatmaking · Sound design'},
   ];
 
-  const lastService = {n:'05', stage:'la culture', title:'Arrangement, production exécutive, réalisation', body:'Accompagnement artistique et technique sur l’ensemble du projet.', price:'CHF 70.- /h', detail:'Arrangement · Direction artistique'};
+  const lastService = {n:'05', title:'Arrangement, production exécutive, réalisation', body:'On t’accompagne sur toute la durée du projet, des premiers choix jusqu’à la livraison.', price:'CHF 70.- /h', detail:'Arrangement · Direction artistique'};
 
   function ServiceCard(s, i) {
     return (
@@ -27,17 +27,12 @@ function Services() {
         }}
         onMouseEnter={e => {
           e.currentTarget.style.background = 'rgba(127,176,105,0.06)';
-          const arrow = e.currentTarget.querySelector('[data-card-arrow]');
-          if (arrow) arrow.style.transform = 'translateX(6px)';
         }}
         onMouseLeave={e => {
           e.currentTarget.style.background = 'transparent';
-          const arrow = e.currentTarget.querySelector('[data-card-arrow]');
-          if (arrow) arrow.style.transform = 'translateX(0)';
         }}>
 
-        <div style={{display:'flex', justifyContent:'space-between', alignItems:'flex-start'}}>
-          <div className="eyebrow" style={{marginTop:4}}>{s.stage}</div>
+        <div style={{display:'flex', justifyContent:'flex-end', alignItems:'flex-start'}}>
           <div style={{
             fontFamily:'var(--font-display)', fontWeight:800,
             fontSize:54, lineHeight:0.88, letterSpacing:'-0.04em',
@@ -60,10 +55,6 @@ function Services() {
           <div style={{height:'1px', background:'var(--bs-hairline)'}}/>
           <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
             <span style={{fontFamily:'var(--font-mono)', fontSize:13, color:'var(--bs-harvest)', letterSpacing:'0.02em'}}>{s.price}</span>
-            <span data-card-arrow style={{
-              fontFamily:'var(--font-mono)', fontSize:13, color:'var(--bs-leaf)',
-              transition:'transform .35s var(--bs-ease-organic)', display:'inline-block',
-            }}>→</span>
           </div>
         </div>
       </a>
@@ -119,7 +110,7 @@ function Services() {
               fontFamily:'var(--font-sans)', fontSize:12.5, lineHeight:1.75,
               color:'rgba(154,142,127,0.75)', margin:0, textAlign:'center', maxWidth:'26ch',
             }}>
-              Les tarifs horaires sont facturés à l'heure entamée. Un acompte peut être demandé à la réservation pour les sessions de plus de 3 heures. Devis personnalisé fourni sur simple demande pour toute production complète.
+              Les tarifs horaires sont facturés à l'heure entamée. Aucun paiement ne passe par le site. Pour un projet plus large, on établit un devis après l'appel découverte.
             </p>
           </div>
 

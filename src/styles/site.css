@@ -19,7 +19,6 @@ button { font: inherit; cursor: pointer; }
   text-transform: uppercase;
   color: var(--bs-vine);
 }
-.eyebrow::before { content: "·· "; opacity: 0.65; }
 
 /* ── Scroll progress bar ────────────────────── */
 .scroll-progress {

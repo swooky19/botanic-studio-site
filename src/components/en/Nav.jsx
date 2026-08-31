@@ -167,7 +167,7 @@ function MobileMenu({links, onClose, active, linkHref, frHref, phone}) {
       </div>
       <div style={{display:'flex', flexDirection:'column', gap:12, alignItems:'center'}}>
         <a className="btn btn-primary bs-mobile-menu-cta" href={linkHref({id:'contact'})} onClick={onClose}>
-          Book a session <span className="arrow">→</span>
+          Book a session
         </a>
         <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>or</span>
         <a className="btn btn-primary bs-mobile-menu-cta" href={`tel:${phone}`}>
