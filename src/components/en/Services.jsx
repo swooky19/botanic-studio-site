@@ -2,13 +2,13 @@ import React from 'react';
 // Services.jsx (EN) — v2: grille 3x2 adaptée à 5 services
 function Services() {
   const services = [
-    {n:"01", stage:"the seed",    title:"Recording", body:"Studio rental with sound engineer. Neve analog chain, treated acoustics, two booths.", price:"CHF 70.- /hr", detail:"Voice · Instruments · Ensembles"},
-    {n:"02", stage:"the sprout",  title:"Mixing",     body:"2 revisions included, stems export included. Clarity, depth, balance for every element.", price:"CHF 350.- (+50.- / extra revision)", detail:"Mix · Stems · Balance"},
-    {n:"03", stage:"the bloom",   title:"Mastering",  body:"Finalization and preparation for release. The final step before the track is ready.", price:"CHF 60.-", detail:"Finalization · Release"},
-    {n:"04", stage:"the harvest", title:"Track production", body:"Rate tailored to the project. From raw idea to finished track, custom to your needs.", price:"On quote", detail:"Beatmaking · Sound design"},
+    {n:"01", title:"Recording", body:"Book one to four hours, with a sound engineer there from start to finish. Billed by the hour started.", price:"CHF 70.- /hr", detail:"Voice · Instruments"},
+    {n:"02", title:"Mixing", body:"Two revisions included and stems delivered. We send a v1, you listen, we adjust through to v3.", price:"From CHF 350.- / track", detail:"Mix · Stems"},
+    {n:"03", title:"Mastering", body:"We don't master in-house. We hand the master to partner engineers and follow the result with you.", price:"On quote", detail:"Partners · Release"},
+    {n:"04", title:"Track production", body:"From the idea to the finished track. We scope the project together, then quote.", price:"On quote", detail:"Beatmaking · Sound design"},
   ];
 
-  const lastService = {n:"05", stage:"the tending", title:"Arrangement, executive production, direction", body:"Artistic and technical support across the whole project.", price:"CHF 70.- /hr", detail:"Arrangement · Artistic direction"};
+  const lastService = {n:"05", title:"Arrangement, executive production, direction", body:"We're with you for the whole project, from the first choices through to delivery.", price:"CHF 70.- /hr", detail:"Arrangement · Artistic direction"};
 
   function ServiceCard(s, i) {
     return (
@@ -27,17 +27,12 @@ function Services() {
         }}
         onMouseEnter={e => {
           e.currentTarget.style.background = "rgba(127,176,105,0.06)";
-          const arrow = e.currentTarget.querySelector("[data-card-arrow]");
-          if (arrow) arrow.style.transform = "translateX(6px)";
         }}
         onMouseLeave={e => {
           e.currentTarget.style.background = "transparent";
-          const arrow = e.currentTarget.querySelector("[data-card-arrow]");
-          if (arrow) arrow.style.transform = "translateX(0)";
         }}>
 
-        <div style={{display:"flex", justifyContent:"space-between", alignItems:"flex-start"}}>
-          <div className="eyebrow" style={{marginTop:4}}>{s.stage}</div>
+        <div style={{display:"flex", justifyContent:"flex-end", alignItems:"flex-start"}}>
           <div style={{
             fontFamily:"var(--font-display)", fontWeight:800,
             fontSize:54, lineHeight:0.88, letterSpacing:"-0.04em",
@@ -60,10 +55,6 @@ function Services() {
           <div style={{height:"1px", background:"var(--bs-hairline)"}}/>
           <div style={{display:"flex", alignItems:"center", justifyContent:"space-between"}}>
             <span style={{fontFamily:"var(--font-mono)", fontSize:13, color:"var(--bs-harvest)", letterSpacing:"0.02em"}}>{s.price}</span>
-            <span data-card-arrow style={{
-              fontFamily:"var(--font-mono)", fontSize:13, color:"var(--bs-leaf)",
-              transition:"transform .35s var(--bs-ease-organic)", display:"inline-block",
-            }}>→</span>
           </div>
         </div>
       </a>
@@ -118,7 +109,7 @@ function Services() {
               fontFamily:"var(--font-sans)", fontSize:12.5, lineHeight:1.75,
               color:"rgba(154,142,127,0.75)", margin:0, textAlign:"center", maxWidth:"26ch",
             }}>
-              Hourly rates are billed per hour started. A deposit may be requested at booking for sessions longer than 3 hours. Custom quote provided on request for any full production.
+              Hourly rates are billed by the hour started. No payment goes through the site. For a larger project, we put a quote together after the discovery call.
             </p>
           </div>
 

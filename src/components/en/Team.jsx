@@ -1,12 +1,11 @@
 import React from 'react';
-// Team.jsx (EN) — v5: one gardener (Yoann)
+// Team.jsx (EN) — v6: single member (Yoann)
 function Team() {
   const members = [
     {
       photo: "team-yoann.webp",
       name: "Yoann Maeder",
-      role: "The grower",
-      bio: "Guitarist, producer and sound engineer. He approaches every project with the patience of a craftsman and the vision of an architect. Montreux Jazz, Paléo, and 15 years spent growing sounds.",
+      bio: "Guitarist, composer, producer and mixer. Fifteen years in the job, by way of Montreux Jazz and Paléo.",
       skills: ["REC","PROD","COMP","MIX"],
     },
   ];
@@ -16,7 +15,6 @@ function Team() {
       <div className="container">
         <div className="section-head reveal-on-scroll">
           <div>
-            <div className="eyebrow">The team · 01 gardener</div>
             <h2>One pair of<br/><em>attentive</em> hands.</h2>
           </div>
         </div>
@@ -37,7 +35,7 @@ function Team() {
 
                 <div
                   role={m.photo ? "img" : undefined}
-                  aria-label={m.photo ? `Portrait of ${m.name}, ${m.role.toLowerCase()}` : undefined}
+                  aria-label={m.photo ? `Portrait of ${m.name}` : undefined}
                   style={{
                     width:160, height:220, borderRadius:8, overflow:"hidden",
                     position:"relative", flexShrink:0,
@@ -57,7 +55,6 @@ function Team() {
 
                 <div style={{display:"flex", flexDirection:"column", justifyContent:"space-between", padding:"4px 0"}}>
                   <div>
-                    <div className="eyebrow" style={{marginBottom:10}}>{m.role}</div>
                     <h3 style={{fontFamily:"var(--font-display)", fontWeight:800, fontSize:38, letterSpacing:"-0.03em", margin:"0 0 12px", lineHeight:0.96}}>{m.name}</h3>
                     <p style={{fontFamily:"var(--font-sans)", fontSize:13, lineHeight:1.65, color:"var(--bs-muted)", margin:0, textWrap:"pretty"}}>{m.bio}</p>
                   </div>

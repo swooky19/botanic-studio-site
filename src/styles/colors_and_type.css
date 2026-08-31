@@ -222,10 +222,6 @@
   color: var(--bs-accent);
   font-weight: 400;
 }
-.bs-eyebrow::before {
-  content: "·· ";
-  opacity: 0.6;
-}
 .bs-mono {
   font-family: var(--font-mono);
   font-size: var(--bs-text-sm);

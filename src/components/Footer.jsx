@@ -50,7 +50,7 @@ function Footer() {
           flexWrap:'wrap', gap:14,
         }}>
           <div style={{fontFamily:'var(--font-mono)', fontSize:10, color:'rgba(154,142,127,0.5)', letterSpacing:'0.14em', textTransform:'uppercase'}}>
-            © botanic studio · Lausanne · MMXXV · Tous droits réservés
+            © botanic studio · Lausanne · MMXXVI · Tous droits réservés
           </div>
           <a href="mentions-legales.html" style={{fontFamily:'var(--font-mono)', fontSize:10, color:'rgba(154,142,127,0.5)', letterSpacing:'0.14em', textTransform:'uppercase', textDecoration:'none'}}>
             Mentions légales
@@ -93,7 +93,7 @@ function MapBlock() {
       style: iframeStyle,
       loading: "lazy",
     }),
-    React.createElement('div', { style: badgeStyle }, "Ouvrir dans Maps →")
+    React.createElement('div', { style: badgeStyle }, "Ouvrir dans Maps")
   );
 }
 

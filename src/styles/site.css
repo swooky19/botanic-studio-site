@@ -19,7 +19,6 @@ button { font: inherit; cursor: pointer; }
   text-transform: uppercase;
   color: var(--bs-vine);
 }
-.eyebrow::before { content: "·· "; opacity: 0.65; }
 
 /* ── Scroll progress bar ────────────────────── */
 .scroll-progress {
@@ -115,17 +114,19 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 }
 .bs-nav-burger:hover span { background: var(--bs-leaf); }
 
-/* ── Mobile: swap nav for the burger; hide the cramped link bar ── */
-@media (max-width: 768px) {
+/* ── Le burger reste affiché tant que la barre desktop ne tient pas.
+   Elle demande ~985px : logo + 6 liens + FR·EN + deux boutons. En dessous,
+   le bloc de droite débordait de la barre (214px à 769px). ── */
+@media (max-width: 1000px) {
   .bs-nav-links,
   .bs-nav-desktop-right { display: none !important; }
   .bs-nav-burger { display: flex; }
 }
 
-/* ── Full-screen mobile menu overlay — vine-on-cream, editorial ── */
+/* ── Full-screen mobile menu overlay — dark, comme le reste du site ── */
 .bs-mobile-menu {
   position: fixed; inset: 0; z-index: 1000;
-  background: var(--bs-cream);
+  background: var(--bs-studio);
   display: flex; flex-direction: column;
   padding: clamp(2rem, 8vw, 4rem);
   animation: bs-menu-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -138,18 +139,18 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 .bs-mobile-menu-close {
   position: absolute; top: clamp(1.4rem, 4vw, 2.2rem); right: clamp(1.4rem, 4vw, 2.2rem);
   width: 44px; height: 44px;
-  background: transparent; border: 1px solid rgba(74, 124, 89, 0.2);
+  background: transparent; border: 1px solid var(--bs-hairline-strong);
   border-radius: 999px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; padding: 0;
   transition: border-color .28s var(--bs-ease-organic), transform .28s var(--bs-ease-organic);
 }
 .bs-mobile-menu-close span {
-  position: absolute; width: 16px; height: 1.5px; background: var(--bs-vine); border-radius: 1px;
+  position: absolute; width: 16px; height: 1.5px; background: var(--bs-light); border-radius: 1px;
 }
 .bs-mobile-menu-close span:nth-child(1) { transform: rotate( 45deg); }
 .bs-mobile-menu-close span:nth-child(2) { transform: rotate(-45deg); }
-.bs-mobile-menu-close:hover { border-color: var(--bs-vine); transform: rotate(90deg); }
+.bs-mobile-menu-close:hover { border-color: var(--bs-leaf); transform: rotate(90deg); }
 
 .bs-mobile-menu-nav {
   margin-top: clamp(4rem, 14vw, 7rem);
@@ -160,19 +161,18 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   display: flex; flex-direction: column;
 }
 .bs-mobile-menu-nav li {
-  border-bottom: 1px solid rgba(74, 124, 89, 0.12);
+  border-bottom: 1px solid var(--bs-hairline);
 }
 .bs-mobile-menu-nav li:last-child { border-bottom: none; }
 .bs-mobile-menu-nav a {
   display: block;
   padding: clamp(1rem, 3.2vw, 1.6rem) 0;
   font-family: var(--font-display);
-  font-style: italic;
   font-weight: 500;
   font-size: clamp(2rem, 7vw, 3.5rem);
   line-height: 1.0;
   letter-spacing: -0.03em;
-  color: var(--bs-vine);
+  color: var(--bs-light);
   text-decoration: none;
   text-transform: lowercase;
   transition: color .28s var(--bs-ease-organic), padding-left .28s var(--bs-ease-organic);
@@ -184,6 +184,12 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
   outline: none;
 }
 .bs-mobile-menu-nav a[aria-current="location"] { color: var(--bs-leaf); }
+/* Le survol annule l'outline ; le focus clavier doit garder un anneau visible. */
+.bs-mobile-menu-nav a:focus-visible {
+  outline: 2px solid var(--bs-leaf);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
 
 .bs-mobile-menu-cta {
   align-self: flex-start;
