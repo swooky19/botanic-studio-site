@@ -114,8 +114,10 @@ section { padding: clamp(80px, 12vw, 160px) 0; position: relative; }
 }
 .bs-nav-burger:hover span { background: var(--bs-leaf); }
 
-/* ── Mobile: swap nav for the burger; hide the cramped link bar ── */
-@media (max-width: 768px) {
+/* ── Le burger reste affiché tant que la barre desktop ne tient pas.
+   Elle demande ~985px : logo + 6 liens + FR·EN + deux boutons. En dessous,
+   le bloc de droite débordait de la barre (214px à 769px). ── */
+@media (max-width: 1000px) {
   .bs-nav-links,
   .bs-nav-desktop-right { display: none !important; }
   .bs-nav-burger { display: flex; }
