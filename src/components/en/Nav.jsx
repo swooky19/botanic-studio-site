@@ -1,5 +1,5 @@
 import React from 'react';
-// Nav.jsx (EN) — mirror of FR Nav.jsx, with "Book" / "Call us" buttons
+// Nav.jsx (EN) — mirror of FR Nav.jsx, primary CTA + secondary call button
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [active, setActive]   = React.useState("");
@@ -107,8 +107,7 @@ function Nav() {
 
             <div style={{display:"flex", alignItems:"center", gap:10}}>
               <a className="btn btn-primary" style={{padding:"9px 20px", fontSize:12.5}} href={linkHref({id:'contact'})}>Book</a>
-              <span style={{fontFamily:"var(--font-mono)", fontSize:11, color:"rgba(154,142,127,0.5)"}}>or</span>
-              <a className="btn btn-primary" style={{padding:"9px 20px", fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Call us</a>
+              <a className="btn btn-ghost" style={{padding:"9px 20px", fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Call us</a>
             </div>
           </div>
 
@@ -169,8 +168,7 @@ function MobileMenu({links, onClose, active, linkHref, frHref, phone}) {
         <a className="btn btn-primary bs-mobile-menu-cta" href={linkHref({id:'contact'})} onClick={onClose}>
           Book an appointment
         </a>
-        <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>or</span>
-        <a className="btn btn-primary bs-mobile-menu-cta" href={`tel:${phone}`}>
+        <a className="btn btn-ghost bs-mobile-menu-cta" href={`tel:${phone}`}>
           Call us
         </a>
       </div>

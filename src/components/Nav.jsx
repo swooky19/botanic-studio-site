@@ -1,6 +1,6 @@
 import React from 'react';
 // Nav.jsx — polished v2: Inter Tight wordmark, dynamic active, fixed anchors
-// + support des pages hors accueil (ex: atelier.html) + boutons "Prends rendez-vous" / "Appelle-nous"
+// + support des pages hors accueil (ex: atelier.html) + CTA principal + appel en secondaire
 function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   const [active, setActive]   = React.useState('');
@@ -108,8 +108,7 @@ function Nav() {
 
             <div style={{display:'flex', alignItems:'center', gap:10}}>
               <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={onHome ? "#contact" : "index.html#contact"}>Prends rendez-vous</a>
-              <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>ou</span>
-              <a className="btn btn-primary" style={{padding:'9px 20px', fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Appelle-nous</a>
+              <a className="btn btn-ghost" style={{padding:'9px 20px', fontSize:12.5}} href={`tel:${PHONE_NUMBER}`} title={PHONE_DISPLAY}>Appelle-nous</a>
             </div>
           </div>
 
@@ -170,8 +169,7 @@ function MobileMenu({links, onClose, active, linkHref, phone, phoneDisplay}) {
         <a className="btn btn-primary bs-mobile-menu-cta" href={linkHref({id:'contact'})} onClick={onClose}>
           Prends rendez-vous
         </a>
-        <span style={{fontFamily:'var(--font-mono)', fontSize:11, color:'rgba(154,142,127,0.5)'}}>ou</span>
-        <a className="btn btn-primary bs-mobile-menu-cta" href={`tel:${phone}`}>
+        <a className="btn btn-ghost bs-mobile-menu-cta" href={`tel:${phone}`}>
           Appelle-nous
         </a>
       </div>
